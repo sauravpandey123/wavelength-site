@@ -23,7 +23,7 @@ if (dataTag) {
     top_blocker: insightLine(summary.top_barriers?.[0]),
     top_factor: insightLine(summary.top_match_factors?.[0]),
     top_activity: insightLine(summary.top_activities?.[0]),
-    try_top2: "Grouped as not likely (1-2), on the fence (3), and likely (4-5).",
+    try_top2: "",
   };
 
   document.querySelectorAll("[data-insight]").forEach((el) => {
@@ -226,7 +226,7 @@ if (dataTag) {
       const ctx = document.getElementById(id);
       if (!ctx) return;
 
-      const labels = ["Not likely (1-2)", "On the fence (3)", "Likely (4-5)"];
+      const labels = ["Unlikely", "Open to trying (3)", "Highly Likely (4-5)"];
       const values = [counts.notLikely, counts.neutral, counts.likely];
       createChart(
         ctx,
