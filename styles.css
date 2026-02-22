@@ -200,7 +200,7 @@ p {
 .hero-actions {
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin: 1.3rem 0 1rem;
 }
 
@@ -215,7 +215,7 @@ p {
 .hero-highlights {
   display: flex;
   gap: 0.7rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .highlight {
@@ -224,6 +224,7 @@ p {
   padding: 0.3rem 0.8rem;
   border-radius: 999px;
   font-size: 0.82rem;
+  white-space: nowrap;
 }
 
 .hero-media {
@@ -535,5 +536,10 @@ p {
 
   .button {
     width: 100%;
+  }
+
+  .hero-actions,
+  .hero-highlights {
+    flex-wrap: wrap;
   }
 }
