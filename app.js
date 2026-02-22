@@ -226,7 +226,7 @@ if (dataTag) {
       const ctx = document.getElementById(id);
       if (!ctx) return;
 
-      const labels = ["Unlikely", "Open to trying (3)", "Highly Likely (4-5)"];
+      const labels = ["Unlikely", "Open to trying", "Highly likely"];
       const values = [counts.notLikely, counts.neutral, counts.likely];
       const total = values.reduce((sum, value) => sum + value, 0);
       const labelsWithPct = labels.map((label, index) => {
