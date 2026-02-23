@@ -40,27 +40,27 @@ if (dataTag) {
         const { ctx, width, height } = chart;
         ctx.save();
         ctx.globalCompositeOperation = "destination-over";
-        ctx.fillStyle = opts && opts.color ? opts.color : "#ffffff";
+        ctx.fillStyle = opts && opts.color ? opts.color : "#0c1a12";
         ctx.fillRect(0, 0, width, height);
         ctx.restore();
       },
     };
 
     Chart.register(solidBackground);
-    Chart.defaults.font.family = "Sora, system-ui, sans-serif";
-    Chart.defaults.color = "#5f6270";
-    Chart.defaults.borderColor = "rgba(27, 28, 35, 0.08)";
+    Chart.defaults.font.family = "\"Plus Jakarta Sans\", system-ui, sans-serif";
+    Chart.defaults.color = "#d1fae5";
+    Chart.defaults.borderColor = "rgba(16, 185, 129, 0.18)";
     Chart.defaults.plugins.legend.display = false;
     Chart.defaults.animation = false;
     Chart.defaults.responsive = false;
 
     const palette = {
-      teal: "#1f7a8c",
-      coral: "#ff7a59",
-      gold: "#f9c74f",
-      sage: "#43aa8b",
-      plum: "#9b5de5",
-      navy: "#577590",
+      teal: "#10b981",
+      coral: "#d946ef",
+      gold: "#22c55e",
+      sage: "#34d399",
+      plum: "#e879f9",
+      navy: "#15803d",
     };
 
     const wrapLabel = (label, max = 20) => {
@@ -152,7 +152,7 @@ if (dataTag) {
           scales: {
             x: {
               beginAtZero: true,
-              grid: { color: "rgba(27, 28, 35, 0.05)" },
+              grid: { color: "rgba(16, 185, 129, 0.14)" },
               ticks: {
                 callback: (value, index) => {
                   if (horizontal) {
@@ -178,7 +178,7 @@ if (dataTag) {
             },
           },
           plugins: {
-            solidBackground: { color: "#ffffff" },
+            solidBackground: { color: "#0c1a12" },
           },
         },
       });
@@ -212,11 +212,11 @@ if (dataTag) {
             },
             y: {
               beginAtZero: true,
-              grid: { color: "rgba(27, 28, 35, 0.05)" },
+              grid: { color: "rgba(16, 185, 129, 0.14)" },
             },
           },
           plugins: {
-            solidBackground: { color: "#ffffff" },
+            solidBackground: { color: "#0c1a12" },
           },
         },
       });
@@ -244,7 +244,7 @@ if (dataTag) {
 
           const { ctx } = chart;
           ctx.save();
-          ctx.font = "700 13px Sora, system-ui, sans-serif";
+          ctx.font = "700 13px \"Plus Jakarta Sans\", system-ui, sans-serif";
           ctx.textAlign = "center";
           ctx.textBaseline = "middle";
 
@@ -252,7 +252,7 @@ if (dataTag) {
             const value = Number(data[index] || 0);
             if (!value) return;
             const pct = Math.round((value / pieTotal) * 100);
-            const textColor = index === 1 ? "#1b1c23" : "#ffffff";
+            const textColor = "#ffffff";
             const props = slice.getProps(
               ["x", "y", "startAngle", "endAngle", "innerRadius", "outerRadius"],
               true
@@ -280,7 +280,7 @@ if (dataTag) {
               {
                 data: values,
                 backgroundColor: [palette.navy, palette.gold, palette.coral],
-                borderColor: "#ffffff",
+                borderColor: "#0c1a12",
                 borderWidth: 4,
               },
             ],
@@ -307,7 +307,7 @@ if (dataTag) {
                   },
                 },
               },
-              solidBackground: { color: "#ffffff" },
+              solidBackground: { color: "#0c1a12" },
             },
           },
         },
