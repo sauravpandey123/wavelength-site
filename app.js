@@ -329,3 +329,35 @@ if (dataTag) {
     buildLikelihoodPie("chart-likelihood", likelihoodGroups);
   }
 }
+
+const updatesForm = document.getElementById("updates-form");
+if (updatesForm) {
+  updatesForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const getValue = (name) => {
+      const field = updatesForm.elements.namedItem(name);
+      if (!field || typeof field.value !== "string") return "";
+      return field.value.trim();
+    };
+
+    const name = getValue("name");
+    const email = getValue("email");
+    const campus = getValue("campus");
+    const subject = encodeURIComponent("Wavelength launch updates signup");
+    const body = encodeURIComponent(
+      [
+        "Hi Wavelength team,",
+        "",
+        "I want launch updates.",
+        name ? `Name: ${name}` : "",
+        email ? `Email: ${email}` : "",
+        campus ? `Campus: ${campus}` : "",
+      ]
+        .filter(Boolean)
+        .join("\n")
+    );
+
+    window.location.href = `mailto:nishant.shrestha@tufts.edu?subject=${subject}&body=${body}`;
+  });
+}
